@@ -563,7 +563,7 @@ figure {
 .notes-wrapper a {
     font-weight: 800;
     opacity: 1;
-    transition: 500ms;
+    transition: 300ms;
     text-decoration: none;
     color: var(--text);
 }
@@ -971,7 +971,7 @@ img.thumbnail {
     text-decoration: none;
     color: var(--text);
     opacity: 0.6;
-    transition: 500ms;
+    transition: 300ms;
 }
 
 .post-tags a:hover {
