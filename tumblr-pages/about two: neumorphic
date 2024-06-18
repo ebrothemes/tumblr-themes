@@ -1,0 +1,621 @@
+<!-----
+ 
+;; about two ;;
+ 
+neumophic about page by ebrothemes
+ 
+TERMS OF USE:
+- do not remove the credit.
+- do not repost/redistribute.
+- do not take parts of the code and use it as your own.
+- do not use as a base code.
+
+
+CREDITS:
+icons: honeybee icon font by suomi
+tooltips: tippy.js by @atomiks on github
+ 
+ 
+COLORS:
+if you want to change the colors, mess with the colors in the ::root section which will change the colors across the code
+
+ 
+INSTRUCTIONS:
+if you only want to change the colors, change at the root, then scroll down to the note 'start editing here'
+
+almost all editing and styling is changed past that point, except the icons for the likes/dislikes lists, and whether or not you want a gradient text highlight, both of which are in the css. look for the 🌻 emoji to find those pieces of code.
+
+
+HONEYBEE ICONS:
+find all available icons to customize code here:
+    https://honeybee.suiomi.com/
+    
+if editing in css, you'll want the four-digit code, which follows a / symbol
+    this will look like "/ea15"
+    
+if editing in the html, you'll want the name 
+    this will look like "eye-o"
+    when changing the icon in the html, you'll see something that looks like         "th th-icon-name"
+    you'll then change it to "th th-eye-o" or whatever they icon you want is
+
+ 
+x camila
+ 
+----->
+
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+<head>
+
+<title></title>   
+
+<link rel="shortcut icon" href="{Favicon}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css"/> 
+
+<style type="text/css">
+                      /* 🌻 edit colors here! */
+:root {
+  --bg: #E4E5EA;     /* background */
+  --li: #fff;        /* light */
+  --sh: #aeafb2;     /* shadow */
+  --accent: #a54829; /* accent color */
+  --accglow: #cc7457;/* glow color */
+  --text: #333232;   /* text */
+  --hlg: #CFB04A;    /* stats gradient */
+  
+}
+   
+/* GENERAL CODE */
+body > iframe:first-child { display: none !important; }
+
+body {
+    background-color: var(--bg);
+    font-family: Lato, sans-serif;
+    margin:0;
+    padding:0;
+    font-size:1em;
+    color: var(--text);
+}
+ 
+a {
+    color:var(--text);
+    text-decoration: none
+}
+ 
+a:hover {
+    color: var(--text);
+}
+
+p {
+  margin:0;
+  padding:0;
+  font-size:1em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 2.1;
+}
+
+.th {
+    color: var(--text);
+}
+
+/* STRUCTURE CODE */
+.main {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.left {
+    height: 500px;
+    width: 150px;
+    float: left;
+}
+
+.right {
+    height: 500px;
+    width: 350px;
+    float: right;
+}
+
+.bottom-right{
+    height: 240px;
+    width: 165px;
+    float: left;
+}
+
+.column {
+    width: 50%;
+    float: left;
+}
+
+/* HIGHLIGHT GRADIENT SPAN */
+.highlight {
+    font-weight: 700;
+    color: white;
+    /* 🌻 to make gradient text solid, just replace the contents of background-image with the color or var(--x), x being the name in the ::root section for the color */
+    background-image: linear-gradient(to right, var(--accent) 0%, var(--hlg) 100%);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+
+/* ICON STYLING*/
+.icon {
+    margin: 8px auto;
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    border: 10px var(--bg) solid;
+    box-shadow:  6px 6px 12px var(--sh), 
+             -6px -6px 12px var(--li);
+}
+
+.icon img {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+}
+
+/* UPDATES STYLING */
+.updates {
+    width: 125px;
+    height: 40px;
+    margin: 15px auto;
+    border-radius: 20px;
+    box-shadow:  6px 6px 12px var(--sh), 
+             -6px -6px 12px var(--li);
+    text-align: center;
+    line-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 700;
+    text-shadow:0 0 8px var(--accglow);
+}
+
+.updates-content {
+    width: 105px;
+    height: 260px;
+    margin: 15px auto;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 8px var(--sh), 
+             inset -4px -4px 8px var(--li);
+    padding: 10px;
+    overflow: auto;
+    font-weight: 700;
+}
+
+.update {
+    border-bottom: 1px solid var(--sh);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.day {
+    text-align: right;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* TAB BAR */
+.tab {
+    overflow: hidden;
+    margin: auto;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 50%;
+    margin: 10px 10px;
+    box-shadow:  4px 4px 8px var(--sh), 
+             -4px -4px 8px var(--li);
+}
+
+.tab button:hover {
+    background: linear-gradient(145deg, #d4d4d9, #fbfdff);
+}
+
+.tab button.active .th {
+    background-color: inherit;
+    color: var(--accent);
+    text-shadow:0 0 5px var(--accglow);
+}
+
+.tab button.active {
+    box-shadow: inset 2px 2px 6px var(--sh), 
+             inset -3px -3px 6px var(--li);
+}
+
+/* TAB CONTENT STYLING */
+.tabcontent {
+    display: none;
+    margin: 15px;
+    height: 132px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 8px var(--sh), 
+             inset -4px -4px 8px var(--li);
+    overflow: auto;
+    line-height: 1.7em;
+}
+
+#stats{
+    line-height: 2.1em; 
+}
+
+#about {
+    line-height: 1.6em;
+}
+
+#current {
+    line-height: 2.1em;
+}
+
+#likes, #dislikes{
+    overflow: hidden;
+}
+
+#likes ul li:before  {    
+    content:'\ea55'; /* 🌻 choose honeybee icon code for likes list */
+    font-family:'honeybee';
+    margin-right: 5px;
+    color: var(--accent);
+}
+
+#dislikes ul li:before {
+    content:'\e965'; /* 🌻 choose honeybee icon code for dislikes list */
+    font-family:'honeybee';
+    margin-right: 5px;
+    color: var(--accent);
+}
+
+/* NAVIGATION LIST */
+.link-box {
+    float:left;
+    height: 240px;
+    width: 170px;
+    margin: 0px 0px 0px 15px;
+}
+
+.link {
+    height: 60px;
+    width: 170px;
+    margin: 0px;
+}
+
+.link-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow:  4px 4px 8px var(--sh), 
+             -4px -4px 8px var(--li);
+    margin: 10px 0px;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.link-icon .th {
+    color: var(--accent);
+}
+
+.link-text {
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    box-shadow:  4px 4px 8px var(--sh), 
+             -4px -4px 8px var(--li);
+    margin: 10px 0px;
+    float: right;
+    line-height: 40px;
+    text-align: center;
+    font-size: 17px;
+    text-transform: lowercase;
+}
+
+.link:hover .link-icon, .link:hover .link-text {
+    background: linear-gradient(145deg, #d4d4d9, #fbfdff);
+}
+
+/* ABOUT RECTANGLE */
+.about {
+    width: 95px;
+    height: 170px;
+    margin: 10px 15px;
+    padding: 10px 20px 0 20px;
+    border-radius: 20px;
+    box-shadow:  5px 5px 10px var(--sh), 
+             -5px -5px 10px var(--li);
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.7em;
+    text-align-last: justify;
+    color: var(--accent);
+}
+
+/* SOCIAL MEDIA LINKS*/
+.social {
+    width: 135px;
+    margin: 10px 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 6px var(--sh), 
+             inset -3px -3px 6px var(--li);
+    float: left;
+    line-height: 32px;
+    text-align: center;
+}
+
+.social-media:hover .th {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* TIPPY TOOLTIPS */
+.tippy-box[data-theme~='tomato'] {
+    background-color: var(--bg);
+    color: var(--text);
+    border-radius: 5px;
+    box-shadow:  3px 3px 6px var(--sh), 
+             -4px -4px 8px var(--li);
+}
+</style>
+</head>
+
+
+
+<!--    START EDITING HERE    -->
+
+<body>
+
+<div class="main">
+<div class="left">
+<div class="icon">
+
+<img src="IMAGE URL HERE"> <!-- 🌻 image is 115px by 115px-->
+    
+</img></div>
+<div class="updates">updates</div>    
+<div class="updates-content">
+    
+    <div class="update">UPDATE NAME<br>
+        <div class="day">UPDATE DATE</div></div>
+    
+    <div class="update">UPDATE NAME<br>
+        <div class="day">UPDATE DATE</div></div> 
+    
+    <!-- 🌻 can copy and paste each pair of lines as many times as wanted, it will scroll-->
+    
+    
+</div></div>
+<div class="right">
+<div class="tab">
+  
+ <!-- 🌻 to edit the tab icons, find the th th-icon-name, to edit tooltip text, find 'data-tippy-content='tooltip text here'-->
+ 
+  <button class="tablinks" onclick="openCity(event, 'stats')" id="defaultOpen" data-tippy-content="stats"><span class="th th-aloe-vera"></span></button>
+  
+  <button class="tablinks" onclick="openCity(event, 'about')" data-tippy-content="about"><span class="th th-acorn"></span></button>
+  
+  <button class="tablinks" onclick="openCity(event, 'likes')" data-tippy-content="likes"><span class="th th-mapple-leaf"></span></button>
+  
+  <button class="tablinks" onclick="openCity(event, 'dislikes')" data-tippy-content="dislikes"><span class="th th-cactus"></span></button>
+  
+  <button class="tablinks" onclick="openCity(event, 'current')" data-tippy-content="currently..."><span class="th th-leaf-1"></span></button>
+</div>
+
+ <!-- STATS TAB CONTENT -->
+<div id="stats" class="tabcontent">
+
+
+  <span class="highlight">name:</span> NAME HERE
+  <br><span class="highlight">age:</span> AGE
+  <br><span class="highlight">pronouns:</span> PRONOUNS
+  <br><span class="highlight">location:</span> LOCATION
+  
+  
+</div>
+
+
+
+
+ <!-- ABOUT TAB CONTENT -->
+<div id="about" class="tabcontent"><p> 
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+    
+        
+</p></div>
+
+
+
+
+ <!-- LIKES TAB CONTENT -->
+<div id="likes" class="tabcontent"><div class="column">  
+
+ <!-- column one items -->
+<ul>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+</ul>
+    
+    
+</div><div class="column"> 
+
+<!-- column two items -->
+<ul>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+</ul>
+    
+    
+</div></div>
+
+
+
+
+ <!-- DISLIKES TAB CONTENT -->
+<div id="dislikes" class="tabcontent"><div class="column">  
+
+ <!-- column one items -->
+<ul>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+</ul>
+    
+    
+</div><div class="column"> 
+
+<!-- column two items -->
+<ul>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+</ul>
+    
+    
+</div></div>
+
+
+ <!-- CURRENTLY... TAB CONTENT -->
+<div id="current" class="tabcontent">
+
+
+  <span class="highlight">watching:</span> TV SHOWS AND MOVIES
+  <br><span class="highlight">listening to:</span> MUSIC
+  <br><span class="highlight">making:</span> CREATIONS
+  <br><span class="highlight">studying:</span> JOB/MAJOR/WHATEVER
+  
+  
+</div>
+
+
+ <!-- LINKS -->
+<div class="link-box">
+    <a href="/">
+    <div class="link">
+        <div class="link-icon"><span class="th th-home-o"></span></div>
+        <div class="link-text">index</div>
+    </div>
+    </a>
+    
+    <a href="/ask">
+    <div class="link">
+        <div class="link-icon"><span class="th th-envelope-o"></span></div>
+        <div class="link-text">message</div>
+    </div>
+    </a>
+    
+    <a href="/LINKHERE">
+    <div class="link">
+        <div class="link-icon"><span class="th th-push-pin-o"></span></div>
+        <div class="link-text">LINK ONE</div>
+    </div>
+    </a>
+    
+    <a href="/LINKHERE">
+    <div class="link">
+        <div class="link-icon"><span class="th th-push-pin-o"></span></div>
+        <div class="link-text">LINK TWO</div>
+    </div>
+    </a>
+    
+        
+</div>
+
+<div class="bottom-right"><div class="about">a b o<br>u t /<br>/ m e</div><div class="social">
+
+ <!-- 🌻 browse honeybee icons to see all the social media icons they have, and replace the icons with what you'd like to share. add your username in the date-tippy-content='text here' and add a link to your page where it says URL HERE-->
+
+        <a href="URL HERE"><div class="social-media" data-tippy-content="@USERNAME"><span class="th th-discord"></span>
+</div></a>
+        <a href="URL HERE"><div class="social-media" data-tippy-content="@USERNAME"><span class="th th-instagram-o"></span>
+</div></a>
+        <a href="URL HERE"><div class="social-media" data-tippy-content="@USERNAME"><span class="th th-spotify"></span>
+</div></a>
+    
+        
+<!-- DON'T EDIT CODE BELOW HERE -->       
+</div>
+</div>
+</div>
+</div>
+<div id="credit" style="font-family:'Lato',sans-serif;position:fixed;bottom:15px;right:10px;font-size:14.5px;line-height:14px;height:14px;width:14px;padding:4px;" data-tippy-content="camila codes"><a href="https://ebrothemes.tumblr.com" style="color:var(--accent);">E</a></div>
+</center>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+        tippy('.tablinks', {
+            arrow: false,
+            theme: 'tomato',
+            });
+</script>
+<script>
+        tippy('.social-media', {
+            arrow: false,
+            theme: 'tomato',
+            placement: 'bottom',
+            });
+</script>
+<script>
+        tippy('#credit', {
+            arrow: false,
+            theme: 'tomato',
+            });
+</script>
+</body>
+</html>
