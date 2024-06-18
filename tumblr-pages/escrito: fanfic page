@@ -1,0 +1,646 @@
+<!-----
+
+;; escrito ;;
+
+fanfic page by ebrothemes (originally posted by me on my main, @longtud-de-onda)
+ 
+CREDITS
+ 
+tab script from w3schools.com
+icons from fontawesome
+ 
+TERMS OF USE:
+- do not remove the credit.
+- do not repost/redistribute.
+- do not take parts of the code and use it as your own.
+- do not use as a base code.
+
+COLORS:
+if you want to change the colors, search for these colors and replace
+
+light blue ------------------ #b5d1cf
+med blue (hover/scrollbar) -- #86b4b0
+background white ------------ #fcf7ff
+text color ------------------ #424b54
+light grey for borders ------ #e5e5e5
+link icon yellow ------------ #e1ce7a
+
+----->
+ 
+
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+<head>
+
+<title>about me</title>
+<link rel="shortcut icon" href="{Favicon}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,700,700i|Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+
+
+/*----- REMOVES TUMBLR CONTROLS -----*/
+body > iframe:first-child { display: none !important; }
+
+
+/*----- BASIC PAGE INFO -----*/
+body {
+    background-color:#fcf7ff;
+}
+
+a {
+    color:#424b54;
+    text-decoration: none
+    
+}
+
+a:hover {
+    color: #86b4b0;
+}
+
+/*----- SCROLL BAR -----*/
+
+::-webkit-scrollbar {
+    width: 13px; 
+    background-color: grey;
+}
+
+::-webkit-scrollbar-track {
+    border: 6px solid #fcf7ff; 
+    background-color: #e5e5e5;
+    
+}
+ 
+::-webkit-scrollbar-thumb {
+   border: 5px solid #fcf7ff;
+   background-color: #86b4b0;
+}
+    
+/*----- MAIN STRUCTURE -----*/
+
+.box {
+    position: fixed;
+    width: 700px;
+    height: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sidebar {
+    width:150px;
+    height:400px;
+    float:left;
+}
+
+.iconbox {
+    width:150px;
+    height:190px;
+}
+
+.tabcontent {
+    width:520px;
+    height:400px;
+    float: right;
+}
+
+.tabbox {
+    width:150px;
+    height:210px;}
+
+/*----- ICON BOX CONTENT -----*/
+
+.user {
+    font-family: 'Open Sans', sans-serif;
+    font-size:9pt; /*----- change size of username text -----*/
+    width:150px;
+    height:40px;
+    margin-top:15px;
+    color: #808080; /*----- change color of username -----*/
+}
+
+/*----- TAB CONTENT -----*/
+
+.tabbox button {
+    width:150px;
+    height:50px;
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 15px;
+    line-height: 0px;
+    letter-spacing: 2px;
+    color: #424b54;
+    font-family: 'Open Sans', sans-serif ;
+    margin-top: 15px;
+    margin-bottom:1px;
+}
+
+.tabbox button:hover {
+    background-color:#b5d1cf; /*----- tab color on hover -----*/
+}
+
+.tabbox button.active {
+    background-color:#b5d1cf; /*----- tab color when selected -----*/
+}
+
+/*----- MAIN PAGE CONTENT -----*/
+
+.name {
+    font-family: 'Playfair Display', sans-serif;
+    color: #424b54;
+    font-size: 100pt; /*----- change size of name font -----*/
+    width:520px;
+    height:150px;
+    line-height:130px;
+}
+
+.mainimg {
+    width:508px;
+    height:38px;
+    margin-top:15px;
+    margin-bottom:15px;
+    overflow: hidden;
+    padding: 5px;
+    border:1px solid #e5e5e5;
+    clear: all
+}
+
+.maintxt {
+    width:518px;
+    height:48px;
+    margin-top:15px;
+    margin-bottom:15px;
+    font: 9pt 'Open Sans', sans-serif;
+    text-align: justify;
+    text-align-last: justify;
+    color:#424b54;
+    overflow: hidden;
+    letter-spacing:1px;
+    border:1px solid #e5e5e5;
+    clear: all
+}
+
+.cropimg {
+    max-height:38px;
+    overflow:hidden;
+    
+}
+
+.links {
+    width:104px;
+    height:90px;
+    float:left;
+    margin-top:15px;
+    margin-bottom:17px;
+}
+
+.linktxt {
+    width:80px;
+    height:20px;
+    font: 10px 'Open Sans', sans-serif;
+    text-align: center;
+    letter-spacing:1px;
+    line-height:20px;
+    color: #424b54;
+    text-transform: uppercase;
+    background-color:#b5d1cf;
+}
+
+.links:hover .linktxt {background-color: #86b4b0; }  
+
+.linkicon {
+    width:60px;
+    height:40px;
+    font-size:40px;
+    color: #e1ce7a;
+    padding:10px;
+}
+
+
+/*----- FICS PAGE CONTENT -----*/
+
+.oneshots {
+    width:158px;
+    height:388px;
+    padding: 5px;
+    float:left;
+    border:1px solid #e5e5e5;
+    /*overflow-x: hidden;
+    overflow-y: scroll;*/
+    
+    /*if oneshots go beyond the length of the box remove the comments from the overflow lines to enable scroll*/
+}
+
+.chapters {
+    width:320px;
+    height:400px;
+    float:right;
+    /*overflow-x: hidden;
+    overflow-y: scroll;*/
+    
+    /*if more than 3 fics remove the comments from the overflow lines*/
+}
+
+.cfic {
+    width:320px;
+    height:120px;
+    margin-bottom: 20px;
+}
+
+.cover {
+    width:80px;
+    height:120px;
+    background-color: red;
+    float:left;
+    filter: grayscale(100%);
+}
+
+.finfo {
+    width: 220px;
+    height:120px;
+    float:right;
+}
+
+.title {
+    width:220px;
+    height:28px;
+    margin-bottom: 10px;
+    font: bold italic 10pt 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height:28px;
+    color:#424b54;
+    border-bottom: 2px solid #b5d1cf;
+}
+
+.content {
+    width:190px:
+    height:80px;
+}
+
+.desc {
+    width:110px;
+    height:70px;
+    padding:5px;
+    margin-right: 5px;
+    float:left;
+    font: 8px 'Open Sans', sans-serif;
+    letter-spacing:.5px;
+    text-align: justify;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.chaps {
+    width:80px;
+    height:70px;
+    padding: 5px;
+    margin-left: 5px;
+    float:left;
+    font: italic 9px 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing:.5px;
+    text-align: left;
+    /*overflow-x: hidden;
+    overflow-y: scroll;*/
+    
+    /*if chapters go beyond box, remove the comments from the overflow lines to enable scrolling*/
+}
+
+.story {
+    width:158 px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom:2px;
+    border-bottom: 2px solid #b5d1cf;
+}
+
+.nombre {
+    font: bold italic 10pt 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:#424b54;
+}
+
+.info {
+    font: 7pt 'Open Sans', sans-serif;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    color:#424b54;
+}
+
+.story:hover .nombre{color: #86b4b0;}
+
+/*----- BIO PAGE CONTENT -----*/
+
+.gblock {
+    width:520px;
+    height: 30px;
+}
+
+.tidbit {
+    width:121px;
+    height:30px;
+    background-color: #b5d1cf;
+    color: #fff;
+    font: 9pt 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 30px;
+    float:left;
+}
+
+.tidbit:hover {
+    background-color:#86b4b0;
+}
+
+.b {
+    width: 12px;
+    height: 30px;
+    float:left;
+}
+
+.bio {
+    width:498px;
+    height:288px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border:1px solid #e5e5e5;
+    padding:10px;
+}
+
+.btxt {
+    height:288px;
+    font: 9pt 'Open Sans', sans-serif;
+    text-align: justify;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #424b54;
+}
+
+.btxt p{
+    margin-top: 0px;
+}
+
+    
+</style>
+    
+</head>
+
+<!--- HTML STARTS HERE -->
+
+<body>
+ 
+<center>
+<div class='box'>
+<div class='sidebar'>
+
+<!-- ICON and URL -->
+
+<div class='iconbox'>
+    
+<!-- ICON IMAGE, SQUARE, WILL RESIZE -->
+<img src='ICON LINK' 
+style='border-radius:50%;width:130px;height:130px;margin-top:10px;border:2px solid #e5e5e5;'>
+
+<div class='user'>usename</div> <!-- username -->
+</div>
+    
+    
+<!-- TABS --> 
+<!--messing with anything other than the all-caps text 
+will mess up the tab functioning -->
+
+<div class='tabbox'>
+<button class="tablinks" onclick="openPage(event, 'Welcome')" id="defaultOpen"><p><b>WELCOME</b><p></button>
+<button class="tablinks" onclick="openPage(event, 'Writing')"><p><b>WRITING</b><p></button>
+<button class="tablinks" onclick="openPage(event, 'About')"><p><b>ABOUT ME</b><p></button>
+</div>
+</div>    
+
+<!-- WELCOME TAB -->    
+
+<div id='Welcome' class='tabcontent'>
+<div class='name'>name,</div> <!-- name here -->
+     
+<!--LINKS 
+icon can be changed by looking up fontawesome icons 
+and replacing the 'fa fa-x' with the apprpriate name
+-->
+
+<div class='links'><a href='LINK TO TUMBLR'> 
+<div class='linkicon'><i class="fa fa-step-backward"></i></div>
+<div class='linktxt'><p>back</p></div></a></div>
+
+<div class='links'><a href='LINK TO ASK PAGE'>
+<div class='linkicon'><i class="fa fa-commenting"></i></div>
+<div class='linktxt'><p>ask</p></div></a></div>
+
+<div class='links'><a href='LINK TO MASTERLIST'> <!-- or other pages -->
+<div class='linkicon'><i class="fa fa-list"></i></div>
+<div class='linktxt'><p>masterlist</p></div></a></div>
+
+<div class='links'><a href='LINK TO AO3'>
+<div class='linkicon'><i class="fa fa-pencil-square-o"></i></div>
+<div class='linktxt'><p>ao3</p></div></a></div>
+
+<div class='links'><a href='LINK TO KO-FI'>
+<div class='linkicon'><i class="fa fa-coffee"></i></div>
+<div class='linktxt'><p>ko-fi</p></div></a></div>
+        
+<!-- IMAGE 
+takes the top strip of an image and crops out everything else
+-->
+<div class='mainimg'><div class='cropimg'>
+<img src='IMAGE LINK'></div></div>
+
+<!-- TEXT/LYRIC -->
+<div class='maintxt'><p style='position:relative;top:-14px;padding:10px;padding-bottom:15px'>LYRICS</div></div>
+    
+<!-- WRITING TAB -->
+    
+<div id="Writing" class="tabcontent">
+
+
+<!-- ONESHOTS -->
+
+<!-- sample fic
+
+<div class="story"><a href="LINK HERE">
+    <div class="nombre">TITLE</div>
+    <div class="info">pairing | rating</div>
+</a></div> 
+
+-->
+
+<div class="oneshots">
+
+<div class="story"><a href="LINK HERE">
+    <div class="nombre">TITLE</div>
+    <div class="info">pairing | rating</div>
+</a></div>
+
+<div class="story"><a href="LINK HERE">
+    <div class="nombre">TITLE</div>
+    <div class="info">pairing | rating</div>
+</a></div>
+
+<div class="story"><a href="LINK HERE">
+    <div class="nombre">TITLE</div>
+    <div class="info">pairing | rating</div>
+</a></div>
+            
+<div class="story"><a href="LINK HERE">
+    <div class="nombre">TITLE</div>
+    <div class="info">pairing | rating</div>
+</a></div>
+
+<div class="story"><a href="LINK HERE">
+    <div class="nombre">TITLE</div>
+    <div class="info">pairing | rating</div>
+</a></div>            
+</div>
+
+<!-- CHAPTERED FICS -->
+
+<!-- sample fic
+
+<div class="cfic">
+<div class="cover"><img src="COVER IMAGE LINK" 
+        style="width:100%;height:100%;"></div>
+<div class="finfo">
+<div class="title"> TITLE </div>
+<div class="content">
+<div class="desc">
+DESC HERE
+</div>
+<div class="chaps">
+<a href="CHAPTER ONE LINK">chapter one</a><br>
+<a href="CHAPTER ONE LINK">chapter two</a><br>
+<a href="CHAPTER ONE LINK">chapter three</a><br>
+<a href="CHAPTER ONE LINK">chapter four</a><br>
+<a href="CHAPTER ONE LINK">chapter five</a><br>
+</div></div></div></div>
+
+-->
+
+<div class="chapters">
+
+<div class="cfic">
+<div class="cover"><img src="COVER IMG" 
+        style="width:100%;height:100%;"></div> <!-- 4x6 image ratio -->
+<div class="finfo">
+<div class="title"> TITLE </div>
+<div class="content">
+<div class="desc">
+DESC HERE
+</div>
+<div class="chaps">
+<a href="CHAPTER ONE LINK">chapter one</a><br>
+<a href="CHAPTER ONE LINK">chapter two</a><br>
+<a href="CHAPTER ONE LINK">chapter three</a><br>
+<a href="CHAPTER ONE LINK">chapter four</a><br>
+<a href="CHAPTER ONE LINK">chapter five</a><br>
+</div></div></div></div>
+
+<div class="cfic">
+<div class="cover"><img src="COVER IMG" 
+        style="width:100%;height:100%;"></div> <!-- 4x6 image ratio -->
+<div class="finfo">
+<div class="title"> TITLE </div>
+<div class="content">
+<div class="desc">
+DESC HERE
+</div>
+<div class="chaps">
+<a href="CHAPTER ONE LINK">chapter one</a><br>
+<a href="CHAPTER ONE LINK">chapter two</a><br>
+<a href="CHAPTER ONE LINK">chapter three</a><br>
+<a href="CHAPTER ONE LINK">chapter four</a><br>
+<a href="CHAPTER ONE LINK">chapter five</a><br>
+</div></div></div></div>
+
+
+<div class="cfic">
+<div class="cover"><img src="COVER IMG" 
+        style="width:100%;height:100%;"></div> <!-- 4x6 image ratio -->
+<div class="finfo">
+<div class="title"> TITLE </div>
+<div class="content">
+<div class="desc">
+DESC HERE
+</div>
+<div class="chaps">
+<a href="CHAPTER ONE LINK">chapter one</a><br>
+<a href="CHAPTER ONE LINK">chapter two</a><br>
+<a href="CHAPTER ONE LINK">chapter three</a><br>
+<a href="CHAPTER ONE LINK">chapter four</a><br>
+<a href="CHAPTER ONE LINK">chapter five</a><br>
+</div></div></div></div>
+          
+</div>
+</div>
+
+<!-- ABOUT TAB -->
+
+    
+<div id="About" class="tabcontent">
+<div class="gblock">
+            <div class="tidbit">name</div>
+<div class="b"></div>
+            <div class="tidbit">age</div>
+<div class="b"></div>
+            <div class="tidbit">location</div>
+<div class="b"></div>
+            <div class="tidbit">pronouns</div>
+</div>
+<div class="bio"><div class="btxt">
+            
+BIO GOES HERE
+            
+        </div></div>
+<div class="gblock">
+            <div class="tidbit">mbti</div>
+<div class="b"></div>
+            <div class="tidbit">star sign</div>
+<div class="b"></div>
+            <div class="tidbit">house</div> 
+            <!--intended to be the hogwarts house but like, 
+                put whatever you want here -->
+<div class="b"></div>
+            <div class="tidbit">profession</div>
+</div></div>
+</div>
+<div style="font-family:'Open Sans', sans-serif;position:fixed;bottom:15px;right:10px;font-size:14.5px;line-height:14px;height:14px;width:14px;padding:4px;"><a href="https://ebrothemes.tumblr.com" title="ebrothemes" style="color:#86b4b0;">E</a></div>
+</center>
+
+<!-- JAVASCRIPT THAT MAKES THE TABS WORK -->
+
+<script>
+function openPage(evt, pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(pageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+    
+</html>
