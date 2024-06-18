@@ -194,7 +194,7 @@ if (storedTheme) {
 
 <meta name="text:Name" content="name"/>
 <meta name="text:Info" content="info"/>
-<meta name="text:Pronouns" content="they/them"/>
+<meta name="text:Pronouns/Info" content="they/them"/>
 
 <meta name="if:Secondary Image" content="1"/>
 <meta name="if:Link One" content="0"/>
@@ -1704,7 +1704,7 @@ button.theme-toggle:hover {
     <div class="rs-top">
         <div class="rs-info">
             <div class="rs-name">{text:Name}</div>
-            <div class="rs-bits">{text:Info} - {text:Pronouns}</div>
+            <div class="rs-bits">{text:Info} - {text:Pronouns/Info}</div>
         </div>
         <div class="rs-ava"><a href="{BlogURL}"><img src="{PortraitURL-128}"></a></div>
     </div>
