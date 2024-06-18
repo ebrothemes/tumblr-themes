@@ -1,0 +1,590 @@
+<!-----
+ 
+;; fic rec one: tangerine ;;
+ 
+fic rec page by ebrothemes
+ 
+TERMS OF USE:
+- do not remove or edit the credit. 
+            (it will automatically change color 
+            along with your color customizations.)
+- do not repost/redistribute.
+- do not take parts of the code and use it as your own.
+- do not use as a base code.
+ 
+ 
+CREDITS:
+honeybee icons by suiomi
+normalize.css by necolas on github
+isotope combo filtering by @magnusthemes 
+    https://magnusthemes.tumblr.com/post/171696773190/isotope-combination-filtering
+ 
+ 
+COLORS:
+if you want to change the colors, mess with the colors in the ::root section which will change the colors across the code
+
+ICON:
+to change the little icon that spins, head over to suiomi's honeybee icons page, and find the one you want. then search for th-aloe-vera in the code and replace the 'aloe-vera' with the name of the icon you want. (th-name-here)
+ 
+INSTRUCTIONS:
+how to set up the filtering and everything is detailed next to where all the info will be put.
+ 
+ 
+x camila
+ 
+----->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>fic rec</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+
+
+<style>
+
+/* EDIT COLORS HERE */
+
+:root {
+    --accent: #ee7e55;
+    --lightaccent: #ffe6dd;
+    --dark: #000000;
+    --light: #ffffff;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 15px;
+    margin:  40px;
+}
+
+/* GEN STRUCTURE */
+
+.topbar {
+    width: 100%;
+    height: 75px;
+    display: flex;
+}
+
+.mango {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.papaya {
+    width: calc(100% - 250px);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.egg {
+    width: 100%;
+    display: flex;
+    
+}
+
+.whites {
+    width: 250px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.yolk {
+    width: calc(100% - 275px);
+    margin-left: 25px;
+}
+
+.credit {
+    position: fixed;
+    border: 2px solid var(--accent);
+    bottom: 20px; 
+    right: 20px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:17.5px;
+    border-radius: 100%;
+    background: var(--light); 
+    font-weight: 400;
+    opacity: 0.5;
+    box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.5);
+    transition: 200ms;
+}
+
+.credit a {
+    text-decoration: none;
+}
+
+.credit:hover {
+    opacity: 1;
+}
+
+/* ICON BUTTON */
+
+#circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1.5s;
+}
+
+#circle .th {
+    color: var(--light);
+    font-size: 3em;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinback {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+.spinfor {
+    animation-name: spin;
+    animation-duration: 1.5s;
+}
+
+.spinback {
+    animation-name: spinback;
+    animation-duration: 1.5s;
+}
+
+.cclosed {
+}
+
+.copen {
+}
+
+
+/* SLIDING MENU */
+
+#flesh {
+    maxwidth: 600px;
+    height: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    transition: left 1.6s, opacity 1.3s;
+}
+
+.seed {
+    margin: 0 10px;
+    font-size: 1.2em;
+    color: var(--accent);
+    text-decoration: none;
+    height: 30px;
+}
+
+.seed:first-child {
+    margin-left: 0;
+}
+
+p.seed {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+a.seed {
+    transition: 500ms;
+}
+
+a.seed:hover {
+    color: var(--dark);
+}
+
+.menuclosed {
+    left: -400px;
+    opacity: 0;
+}
+
+.menuopen {
+    left: 15px;
+    opacity: 1;
+}
+
+/* EGG WHITES (filtering sidebar) */
+
+.whites-inner {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.vertl {
+    height: 100px;
+    width: 0;
+    border-left: 2px solid var(--accent);
+    margin-right: 1px;
+}
+
+.coffee {
+    width: 216px;
+    border: 2px solid var(--accent);
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.filter-title {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: var(--accent);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+ul.filter {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ul.filter li {
+    display: inline;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.filter li a {
+    text-decoration: none;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 2px 5px;
+    margin: 0 5px;
+}
+
+.filter .selected {
+    background: var(--accent);
+    color: var(--light);
+}
+
+/* FIC CARDS */
+
+.fic {
+    width: 280px;
+    padding: 10px;
+    border: 2px solid var(--lightaccent);
+    color: var(--accent);
+    box-shadow: -5px -5px var(--accent);
+    margin: 20px;
+}
+
+.fic ftitle {
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+ftitle a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: 1s;
+}
+
+ftitle a:hover {
+    color: var(--dark);
+}
+
+.fic author {
+    display: block;
+}
+
+.fic shipname {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.fic wordcount {
+    display: inline;
+    margin: 5px 0;
+}
+
+.fic genre {
+    display: inline;
+    font-style: italic;
+    margin-left: 7px;
+}
+
+.fic desc {
+    display: block;
+}
+
+.fic divider {
+    display: block;
+    width: 100px;
+    border-bottom: 2px solid var(--lightaccent);
+    margin: 10px 0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="mango">
+        <div id="circle" onclick="menuPopup()">
+            <span id="spinner" class="cclosed th th-aloe-vera"></span>
+        </div>
+    </div>
+    <div class="papaya">
+        <div id="flesh" class="menuclosed">
+            <p class="seed">TITLE fic rec</p>
+            <a class="seed" href="/">home</a>
+            <a class="seed" href="/ask">ask</a>
+            <a class="seed" href="#LINK HERE">line one</a>
+            <a class="seed" href="#LINK HERE">link two</a>
+        </div>
+    </div>
+</div>
+
+<div class="egg">
+    <div class="whites">
+        <div class="vertl"></div>
+    <div class="whites-inner">
+    
+    
+    <!-- 
+    
+    FILTERING INSTRUCTIONS:
+    
+    TO CREATE A NEW FILTER, here's the code...
+    
+    <div class="coffee">
+        <span class="filter-title">FILTER TITLE</span>
+        <ul class="filter option-set exclusive" data-filter-group="GROUPNAMEHERE">
+            <li><a href="#" data-filter-value="" class="selected">all</a></li>
+            <li><a href="#" data-filter-value=".FILTERONECLASS">FILTER ONE</a></li>
+            <li><a href="#" data-filter-value=".FILTERTWOCLASS">FILTER TWO</a></li>
+            <li><a href="#" data-filter-value=".FILTERTHREECLASS">FILTER THREE</a></li>
+        </ul>
+    </div>
+    
+    -----------------------------------------------------------
+    
+    TO ADD A NEW FIC, here's the code...
+    
+        <div class="fic filters">
+        
+            <ftitle><a href="FIC LINK HERE">fic title</a></ftitle>
+            
+            <author>author</author>
+            
+            <divider></divider>
+            
+            <shipname>ship name</shipname>
+            
+            <wordcount>3k</wordcount>
+            
+            <genre>fluff, angst</genre>
+            
+            <divider></divider>
+            
+            <desc>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</desc>
+            
+        </div>
+    
+    -----------------------------------------------------------
+    
+    TO SET UP THE FITLERS
+    
+        already set up are two filters, one for favorites, and one for the genre. of course you can change these up as much as you want. 
+    
+        1. use the filter code and change the title, which is in between the 'span class="filter-title"' tags. 
+    
+        2. change the 'data-filter-group=""' to be equal to a unique title (just use the title of the filter)
+    
+        3. the first <li> is the setting for all. don't mess with this otherwise you won't be able to remove the filter. the following <li> tags are each for a different filter. copy and paste these as many times as you need for additional filters. change the 'data-filter-value' to equal a unique class (remember to format it with a . in front, ex. ".angst")
+    
+        3b. change the content of that li tag to however you want the button to display. 
+    
+        you've set up a filter!
+    
+    -----------------------------------------------------------    
+    
+    TO SET UP A FIC TO BE FILTERED 
+    
+        1. plop down the code for a new fic underneath the previous one. 
+    
+        2. at the top where it says <div class="fic filters"> delete the word filters and replace it with the corresponding class name for the filters you've set up. (don't include the period here)
+        
+        3. for the included filters, if you had a fic that was a favorite and was a fluff fic, the tag would look like <div class="fic fav fluff">
+        
+        remember you can include more than one tag for the same filter. if something is both angst and fluff, tag it as such!
+    
+    -->
+        <div class="coffee">
+        <span class="filter-title">favorites</span>
+        <ul class="filter option-set exclusive" data-filter-group="favorites">
+            <li><a href="#" data-filter-value="" class="selected">all</a></li>
+            <li><a href="#" data-filter-value=".fav">favorites</a></li>
+        </ul>
+        </div>
+        
+        
+        <div class="coffee">
+        <span class="filter-title">genre</span>        
+        <ul class="filter option-set exclusive" data-filter-group="genre">
+            <li><a href="#" data-filter-value="" class="selected">all</a></li>
+            <li><a href="#" data-filter-value=".angst">angst</a></li>
+            <li><a href="#" data-filter-value=".fluff">fluff</a></li>
+            <li><a href="#" data-filter-value=".hc">hurt/comfort</a></li>
+        </ul>
+        </div>
+        
+        
+
+    </div></div>
+    <div class="yolk">
+        
+        <div class="fic fav fluff angst">
+        
+            <ftitle><a href="FIC LINK HERE">fic title</a></ftitle>
+            
+            <author>author</author>
+            
+            <divider></divider>
+            
+            <shipname>ship name</shipname>
+            
+            <wordcount>wordcount</wordcount>
+            
+            <genre>fluff, angst</genre>
+            
+            <divider></divider>
+            
+            <desc>this example fic is tagged as both fluff and angst, and as a favorite.</desc>
+            
+        </div>
+        
+        
+        
+        
+        <div class="fic hc">
+        
+            <ftitle><a href="FIC LINK HERE">fic title</a></ftitle>
+            
+            <author>author</author>
+            
+            <divider></divider>
+            
+            <shipname>ship name</shipname>
+            
+            <wordcount>wordcount</wordcount>
+            
+            <genre>fluff, angst</genre>
+            
+            <divider></divider>
+            
+            <desc>this example fic is tagged as hurt/comfort and is not a favorite.</desc>
+            
+        </div>
+        
+       
+        
+    </div>
+</div>
+
+
+<!-- DON'T TOUCH BELOW HERE -->
+
+<div class="credit"><a href="https://ebrothemes.tumblr.com" title="ebrothemes" style="color:var(--accent);">E</a></div>
+
+<script>
+    
+function menuPopup() { 
+ var spin = document.getElementById("spinner");
+ var menu = document.getElementById("flesh");
+  if (spin.classList.contains('cclosed')) {
+    spin.classList.remove('cclosed');
+    spin.classList.add('copen');
+    if (spin.classList.contains('spinback')) {
+      spin.classList.remove('spinback');
+    }
+    spin.classList.add('spinfor');
+    menu.classList.remove('menuclosed');
+    menu.classList.add('menuopen');
+  } else {
+    spin.classList.remove('copen');
+    spin.classList.add('cclosed');
+    if (spin.classList.contains('spinfor')) {
+      spin.classList.remove('spinfor');
+    }
+    spin.classList.add('spinback');
+    menu.classList.remove('menuopen');
+    menu.classList.add('menuclosed');
+  }
+
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+
+<script>
+$(document).ready(function() {
+ var $container = $(".yolk"); // the container with all the elements to filter inside
+ var filters = {}; //should be outside the scope of the filtering function
+ /* --- read the documentation on isotope.metafizzy.co for more options --- */
+ var $grid = $container.isotope({
+   itemSelector: ".fic", // the elements to filter
+   percentPosition: false // put true if you use percentage widths, otherwise put false
+ });
+ $(".option-set a").click(function(e) {
+   var $this = $(this); // cache the clicked link
+   var filterAttr = "data-filter-value";
+   var filterValue = $this.attr(filterAttr); // cache the filter
+   var $optionSet = $this.parents(".option-set"); // cache the parent element
+   var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+   var filterGroup = filters[group];
+   if (!filterGroup) {
+     filterGroup = filters[group] = [];
+   }
+   var $selectAll = $optionSet.find('a['+filterAttr+'=""]'); // the 'select all' button in the current group
+   var activeClass = "selected", // the class for active links
+     exclClass = "exclusive"; // the class for exclusive groups
+ comboFiltering($this,filters,filterAttr,filterValue,$optionSet,group,$selectAll,activeClass,exclClass);
+   var comboFilter = getComboFilter(filters);
+   $grid.isotope({
+     filter: comboFilter
+   });
+   $this.toggleClass(activeClass);
+   e.preventDefault();
+ });
+});
+</script>
+
+</body>
+</html>
