@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+<head>
+
+<!-----
+ 
+;; lemonade ;;
+ 
+theme by ebrothemes
+ 
+CREDITS
+ 
+normalize.css by necolas on github
+responsive videos by @nouvae
+
+base code by me, patchworked from the official tumblr theme
+    -> most class/id names are the same as in the official theme
+ 
+TERMS OF USE:
+- do not remove the credit.
+- feel free to modify as long as the credit stays on.
+- do not repost/redistribute.
+- do not take parts of the code and use it as your own.
+- do not use as a base code.
+ 
+----->
+
+<title>{Title}</title>
+
+<link rel="shortcut icon" href="{Favicon}">
+{block:Description}
+    <meta name="description" content="{MetaDescription}" />
+{/block:Description}
+
+<link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Grenze:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- META COLORS -->
+
+<meta name="color:Text" content="#000000"/>
+<meta name="color:Background" content="#ffffff"/>
+<meta name="color:Borders" content="#bbbbbb"/>
+<meta name="color:Accent Color" content="#fdd835"/>
+<meta name="color:Accent Light" content="#ffff6b"/>
+<meta name="color:Accent Dark" content="#c6a700"/>
+
+<!-- META CUSTOM LINKS -->
+
+<meta name="if:Link One" content="0"/>
+<meta name="if:Link Two" content="0"/>
+<meta name="if:Link Three" content="0"/>
+
+<meta name="text:Link One Name" content=""/>
+<meta name="text:Link One URL" content=""/>
+<meta name="text:Link Two Name" content=""/>
+<meta name="text:Link Two URL" content=""/>
+<meta name="text:Link Three Name" content=""/>
+<meta name="text:Link Three URL" content=""/>
+
+<style>
+/* HEADER */
+
+body {
+    color: {color:Text};
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    background: {color:Background};
+}
+
+a {
+    text-decoration: none;
+    color: {color:Text};
+}
+
+h1 {
+    color: {color:Accent Color};
+    font-family: 'Grenze', cursive;
+    font-size: 3em;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.credit {
+    position: fixed;
+    border: 2px solid {color:Accent Color};
+    bottom: 20px; 
+    right: 20px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:17.5px;
+    border-radius: 100%;
+    background: {color:Background}; 
+    font-weight: 400;
+    opacity: 0.5;
+    transition: 200ms;
+}
+
+.credit a {
+    text-decoration: none;
+}
+
+.credit:hover {
+    opacity: 1;
+}
+
+.heading {
+    width: 500px;
+    padding: 100px 0 50px 0;
+    margin: auto;
+    background: {color:Background};
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.heading-inner {
+    width: 350px;
+}
+
+.heading-inner h1 {
+    padding-bottom: 10px;
+}
+
+.headava {
+    margin-left: 22px;
+}
+
+#description {
+    color: {color:Accent Dark};
+    font-size: 1.2em;
+}
+
+.headava img {
+    border-radius: 100%;
+}
+
+.navigation-links {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+
+.navigation-links a {
+    margin-right: 20px;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: {color:Text};
+    transition: 500ms;
+}
+
+.navigation-links:last-child {
+    margin-right: 0;
+}
+
+.navigation-links a:hover {
+    color: {color:Accent Dark};
+}
+
+.posts {
+    background: {color:Background};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-wrapper {
+    width: 680px;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+/* POST FORMATTING */
+
+.date-outer {
+    width: 90px;
+}
+
+.left-wrapper {
+    width: 90px;
+    position: sticky;
+    top: 15px;
+}
+
+.date-box {
+    width: 73px;
+    height: 73px;
+    border: 1px solid {color:Borders};
+    margin-right: 15px;
+    margin-bottom: 15px;
+    /*position: sticky;
+    top: 15px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 600ms;
+}
+
+.date-box:hover {
+    background: {color:Accent Color};
+}
+
+.date-inner {
+    width: 57px;
+    height: 57px;
+    margin: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-count {
+    width: 53px;
+    text-align: center;
+    border: 1px solid {color:Borders};
+    position: sticky;
+    top: 105px;
+    padding: 10px;
+    transition: 500ms;
+}
+
+.note-count:hover {
+    background: {color:Accent Color};
+    color: {color:Background};
+}
+
+.post {
+    width: 498px;
+    border: 1px solid {color:Borders};
+}
+
+.post a {
+    color: {color:Text};
+    background-image: linear-gradient({color:Background} 50%, {color:Accent Light} 50%);
+    background-position-y: 45%;
+    transition: background 500ms ease;
+    background-size: auto 200%;
+}
+
+.post a:hover {
+    background-position-y: 100%;
+}
+
+.post-reblog-trail-item {
+    border-top: 1px solid {color:Borders};
+    padding: 20px;
+}
+
+.post-reblog-header {
+    margin-bottom: 1em;
+}
+
+.rb-text:first-child {
+    border-top: none;
+    padding: 20px;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-content h2 {
+    margin: 0;
+    color: {color:Accent Dark};
+}
+
+h2 > a {
+    font-size: 1.3em;
+}
+
+.post-content.title {
+    border-bottom: 1px solid {color:Borders};
+}
+
+/* AUDIO POSTS */
+
+.audio_container {
+    width: 100%;
+}
+
+.tumblr_audio_player {
+    width: 100%;
+}
+
+/* VIDEO POSTS */
+
+.video-wrapper {
+    width: 100%;
+}
+
+/* QUOTE POSTS */
+
+.quote-short {
+    font-size: 1.5em;
+}
+
+.quote-medium {
+    font-size: 1.3em;
+}
+
+.quote-long {
+    font-size: 1.2em;
+}
+
+/* CHAT POSTS */
+
+.conversation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.conversation .label {
+    font-weight: 700;
+}
+
+/* ANSWER POSTS */
+
+.note-item {
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+.note-item .avatar {
+    width: 75px;
+    min-width: 75px;
+    height: 75px;
+}
+
+.note-item .text {
+    flex-grow: 10;
+}
+
+.note-item-asker {
+    border: 1px solid {color:Borders};
+    padding: 20px;
+}
+
+.note-item-asker .text {
+    
+}
+
+.note-item-asker .avatar {
+    margin-right: 20px;
+}
+
+.asker-avatar /* img class */ {
+    
+}
+
+.note-item-answerer {
+    border: 1px solid {color:Borders};
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.note-item-answerer .text {
+    
+}
+
+.note-item-answerer .avatar {
+    margin-left: 20px;
+    
+}
+
+.answer-post .replies {
+    padding-top: 20px;
+}
+
+/* TAGS */
+
+.tag-section {
+    border-top: 1px solid {color:Borders};
+    padding: 20px;
+}
+
+.tag-link {
+}
+
+.tag-link-a {
+    margin-right: 20px;
+    font-size: 0,8em;
+}
+
+.tag-link-a:last-child {
+    margin-right: 0;
+}
+
+/* LIKE AND REBLOG BOX */
+
+.likerb {
+    height: 75px;
+    width: 75px;
+    margin-left: 15px;
+    position: sticky;
+    top: 15px;
+}
+
+.likerb-box-outer {
+    width: 30px;
+}
+
+.likerb-box {
+    width: 28px;
+    height: 28px;
+    border: 1px solid {color:Borders};
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* DATE and TIME FORMATTING */
+
+.date {
+    color: {color:Accent Dark};
+    text-transform: uppercase;
+    transition: 600ms;
+}
+
+.time {
+    transition: 500ms;
+}
+
+.divide {
+    width: 15px;
+    height: 0px;
+    border-bottom: 1px solid {color:Text};
+    margin: 3px;
+    transition: 600ms;
+}
+
+.date-box:hover .divide {
+   border-color: {color:Background};
+}
+
+.date-box:hover .date, 
+.date-box:hover .time {
+    color: {color:Background};
+}
+
+/* POST NOTES */
+
+.notes-wrapper {
+    width: 458px;
+    margin: auto;
+    border: 1px solid {color:Borders};
+    padding: 20px;
+}
+
+li.more_notes_link_container {
+    font-size: 1.1em;
+}
+
+
+ol.notes img {
+    display: none;
+}
+
+ol.notes {
+    list-style-type: none;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ol.notes li.note {
+    padding-bottom: 20px;
+    display: flex;
+}
+
+ol.notes li:last-child {
+    padding: 0;
+}
+
+ol.notes a {
+    color: {color:Text};
+    background-image: linear-gradient({color:Background} 50%, {color:Accent Light} 50%);
+    background-position-y: 45%;
+    transition: background 500ms ease;
+    background-size: auto 200%;
+}
+
+ol.notes a:hover {
+    background-position-y: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    height: 150px;
+}
+
+/* PAGINATION */
+
+.pagination {
+    width: 500px;
+    padding: 0;
+    margin: 50px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.previous, .next-page {
+    margin: 0 10px;
+    height: 30px;
+    text-decoration: none;
+    background: none;
+    border: 1px solid {color:Borders};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    transition: 500ms;
+}
+
+.jump_page {
+    text-decoration: none;
+    background: none;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid {color:Borders};
+    margin: 0 10px;
+    transition: 500ms;
+}
+
+.current_page {
+    text-decoration: none;
+    background: none;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid {color:Borders};
+    margin: 0 10px;
+    background: {color:Accent Color};
+}
+
+.previous:hover, .jump_page:hover, .next-page:hover {
+    background: {color:Accent Color};
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+<div class="heading">
+<div class="heading-inner">
+    <h1>{Title}</h1>
+    {block:Description}
+    <p id="description">{Description}</p>
+    {/block:Description}
+</div>
+
+<div class="headava"><img src="{PortraitURL-128}"></div>
+<div class="navigation-links">
+    <a href="/">home.</a>
+    <a href="/ask">ask.</a>
+    <a href="/archive">archive.</a>
+    {block:IfLinkOne}<a href="{text:Link One URL}">{text:Link One Name}.</a>{/block:IfLinkOne}
+    {block:IfLinkTwo}<a href="{text:Link Two URL}">{text:Link Two Name}.</a>{/block:IfLinkTwo}
+    {block:IfLinkThree}<a href="{text:Link Three URL}">{text:Link Three Name}.</a>{/block:IfLinkThree}
+</div>
+</div>
+
+<!-- POSTS -->
+<div class="posts">
+
+{block:Posts}
+
+<div class="post-wrapper">
+
+<div class="date-outer">{block:Date}
+<div class="left-wrapper"><div class="date-box"><a href="{Permalink}"><div class="date-inner">
+    <div class="date">{ShortMonth} {DayOfMonth}<br>{Year}</div>
+    <div class="divide"></div>
+    <div class="time">{24Hour}:{Minutes}</div>
+</div></a></div>
+
+<a class="notecountlink" href="{Permalink}">
+<div class="note-count">
+    {NoteCountWithLabel}
+</div></a></div>
+{/block:Date}</div>
+
+
+
+<div class="post">
+  
+<!-- TEXT POST -->  
+
+{block:Text}
+    {block:Title}
+        <div class="post-content text-post title">
+        <h2 class="title"><a href="{Permalink}">{Title}</a></h2>
+        </div>
+    {/block:Title}
+    {block:NotReblog}
+        <div class="post-content text-post body">
+        <div class="body-text">{Body}</div>
+        </div>
+    {/block:NotReblog}
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Text}
+
+
+
+<!-- PHOTO POSTS -->
+
+{block:Photo}
+    <div class="post-content photo" data-photo-width="{PhotoWidth-HighRes}">
+        <div class="photo-wrapper">
+            <div class="photo-wrapper-inner">
+                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"{block:LivePhoto}data-live-photo="{LivePhotoURL}" data-live-photo-still-image-time="{LivePhotoStillImageTime}"{/block:LivePhoto}>{LinkCloseTag}
+            </div>
+        </div>
+        {block:NotReblog}
+            <figcaption class="caption">
+                {Caption}
+            </figcaption>
+        {/block:NotReblog}
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Photo}
+                
+                
+<!-- PANO POSTS??? IDK IF ANYONE USES THESE -->                
+{block:Panorama}
+    <div class="post panorama">
+        {LinkOpenTag}
+            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+        {LinkCloseTag}
+        {block:Caption}
+            <div class="caption">{Caption}</div>
+        {/block:Caption}
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Panorama}
+
+ 
+<!-- PHOTOSET POSTS -->               
+                
+{block:Photoset}
+    <div class="post-content photoset">
+        {Photoset}
+        
+        {block:NotReblog}
+            <figcaption class="caption">
+                {Caption}
+            </figcaption>
+        {/block:NotReblog}
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Photoset}
+                
+
+<!-- QUOTE POSTS -->                
+                
+{block:Quote}
+    <div class="post-content quote">
+        <div class="quote-{Length}">
+            {Quote}
+        </div>
+        {block:Source}
+            <div class="source">{Source}</div>
+        {/block:Source}
+    </div>
+{/block:Quote}
+
+
+
+<!-- LINK POSTS -->
+                
+{block:Link}
+    <div class="post-content link-post">
+        <div class="link-wrapper">
+            <a {Target} href="{URL}" class="link">
+                {block:Thumbnail}
+                <div class="link-thumbnail"><img src="{Thumbnail-HighRes}" alt="" /></div>
+                {/block:Thumbnail}
+                <div class="link-text-wrapper">
+                    <div class="link-text">
+                        {block:Host}
+                            <div class="link-host">{Host}</div>
+                        {/block:Host}
+                        <h2 class="link-title">{Name}</h2>
+                        {block:Excerpt}
+                            <div class="link-excerpt">{Excerpt}</div>
+                        {/block:Excerpt}
+                        {block:Author}
+                            <div class="link-author">{Author}</div>
+                        {/block:Author}
+                    </div>
+                </div>
+            </a>
+        </div>
+    {block:NotReblog}
+        <div class="caption">
+            {Description}
+        </div>
+    {/block:NotReblog}
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Link}
+                
+                
+<!-- CHAT POSTS -->                
+{block:Chat}
+    <div class="post-content chat">
+        {block:Title}
+            <h2 class="title"><a href="{Permalink}">{Title}</a></h2>
+        {/block:Title}
+        <ul class="conversation">
+            {block:Lines}
+                <li class="chat-{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
+            {/block:Lines}
+        </ul>
+    </div>
+{/block:Chat}   
+
+
+<!-- AUDIO POSTS -->
+
+{block:Audio}
+    <div class="post-content audio">
+        <div class="audio_container">
+            {block:AudioEmbed}
+                {AudioEmbed color="white"}
+            {/block:AudioEmbed}
+        </div>
+        {block:NotReblog}
+            <div class="caption">
+                {Caption}
+            </div>
+        {/block:NotReblog}
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Audio}
+
+
+
+                
+<!-- VIDEO POSTS -->
+
+
+{block:Video}
+    <div class="post-content video">
+        <div class="video-wrapper">
+            {Video-500}
+        </div>
+        {block:NotReblog}
+            <figcaption class="caption">
+                {Caption}
+            </figcaption>
+        {/block:NotReblog}
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Video}
+
+
+<!-- ANSWER POST -->
+
+{block:Answer}
+    <div class="post-content answer-post">
+        <div class="note-item note-item-asker">
+            <div class="avatar">
+                <img class="asker-avatar" src="{AskerPortraitURL-96}" alt="">
+            </div>
+            <div class="text">
+                <p class="asker"><strong>{Asker}</strong> asked:</p>
+                <div class="asker-question">
+                    {Question}
+                </div>
+            </div>
+        </div>
+
+        {block:Answerer}
+            <div class="note-item note-item-answerer">
+                <div class="text">
+                    <p class="answerer"><strong>{Answerer}</strong> answered:</p>
+                    <div class="answerer-answer">
+                        {Answer}
+                    </div>
+                </div>
+                <div class="avatar">
+                    <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+                </div>
+            </div>
+        {/block:Answerer}
+
+        {block:NotReblog}
+            <div class="replies">
+                {Replies}
+            </div>
+        {/block:NotReblog}
+        
+    </div>
+    
+    <!-- REBLOG -->
+
+{block:RebloggedFrom}
+        <div class="reblog-list">
+            {block:Reblogs}
+            <div class="post-reblog-trail-item rb-{PostType}">
+                <div class="post-reblog-header">
+                    {block:IsActive}
+                    <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}:</a>
+                    {/block:IsActive}
+                    {block:IsDeactivated}
+                    <span class="inactive post-tumblelog-name">{Username}:</span>
+                    {/block:IsDeactivated}
+                </div>
+                <div class="post-reblog-content">
+                    <div class="post-body">
+                        {Body}
+                    </div>
+                </div>
+            </div>
+            {/block:Reblogs}
+        </div>
+    {/block:RebloggedFrom}
+    
+{/block:Answer}
+
+
+{block:HasTags} 
+<div class="tag-section">
+    <div class="tag-link">
+    {block:Tags}
+        <a class="tag-link-a" href="{TagURL}"># {Tag}</a>
+    {/block:Tags}
+    </div>
+</div>
+{/block:HasTags}
+
+</div>  <!-- post -->  
+
+<div class="likerb-box-outer">{block:Date}
+<div class="likerb">
+    <div class="likerb-box">{LikeButton size="15"}</div>
+    <div class="likerb-box">{ReblogButton size="15"}</div>
+</div>
+{/block:Date}</div>
+
+
+</div>  <!-- post-wrapper -->    
+
+{/block:Posts}
+</div>  <!-- posts --> 
+
+{block:PostNotes} 
+<div class="notes-wrapper">
+    {PostNotes}	
+</div>
+{/block:PostNotes}
+
+<footer>
+    
+    <div class="pagination">
+        {block:Pagination}
+            {block:PreviousPage}
+                <a class="previous" href="{PreviousPage}">Previous</a>
+            {/block:PreviousPage}
+            {block:JumpPagination length="5"}
+                {block:CurrentPage}
+                    <span class="current_page">{PageNumber}</span>
+                {/block:CurrentPage}
+                {block:JumpPage}
+                    <a class="jump_page" href="{URL}">{PageNumber}</a>
+                {/block:JumpPage}
+            {/block:JumpPagination}
+            {block:NextPage}
+                <a class="next-page"href="{NextPage}">Next</a>
+            {/block:NextPage}
+        {/block:Pagination} 
+    </div>       
+
+</footer>
+
+<div class="credit"><a href="https://ebrothemes.tumblr.com" title="ebrothemes" style="color:var(--accent);">E</a></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://rawgit.com/robinpx/tumblr/master/scripts/flexibleFrames/flexibleFrames.min.js"></script>
+<script>
+    $(document).ready(function() {
+  flexibleFrames($(".video-wrapper"));  // $(".video") is the class selector passed in the argument
+});
+</script>
+    </body>
+</html>
