@@ -1,0 +1,419 @@
+<!-----
+ 
+;; about three: eloquent ;;
+ 
+about page by ebrothemes
+ 
+TERMS OF USE:
+- do not remove or edit the credit. 
+            (it will automatically change color 
+            along with your color customizations.)
+- do not repost/redistribute.
+- do not take parts of the code and use it as your own.
+- do not use as a base code.
+ 
+ 
+CREDITS:
+Background pattern from Toptal Subtle Patterns
+normalize.css by necolas on github
+ 
+ 
+COLORS:
+if you want to change the colors, mess with the colors in the ::root section which will change the colors across the code
+ 
+ 
+INSTRUCTIONS:
+all editing should be clear once you reach the html sequence in the bottom half. 
+
+BUT to edit/add the images, look for the 🌻 emoji or search for where it says 'replace this url with your image' and you'll change where it says 'URLHERE' to your image url. there are additional troubleshooting notes in that area.
+ 
+
+x camila
+ 
+----->
+
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+<head>
+
+<title>about me</title>   
+
+<link rel="shortcut icon" href="{Favicon}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Khula:wght@300;400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap" rel="stylesheet">
+
+<style type="text/css">
+
+:root {
+    --background:#ffffff;
+    --aboutbg:#ffffff;
+    
+    --text:#131515;
+    --accent:#C0728F;
+    --accenttext:#ffffff;
+}
+
+body {
+    color: var(--text);
+    font-family: 'Poppins', sans serif;
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/inflicted.png');
+    background-position: center;
+}
+    
+.grid-container1 {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 800px 1fr;
+    grid-template-rows: 1fr 500px 1fr;
+}
+
+.credit {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px;
+    height: 20px;
+    font-size:17.5px;
+    line-height:20px;
+    border-radius: 20px;
+    text-align: center;
+    background: var(--accent); 
+    padding: 2px 0px;
+    font-weight:400;
+    opacity: 0.5;
+    box-shadow: 0px 0px 10px -2px #000;
+    transition: 200ms;
+}
+
+.credit a {
+    text-decoration: none;
+    padding: 5px 8px;
+}
+
+.credit:hover {
+    opacity: 1;
+}
+
+.grid-container2 {
+    border-radius: 7px 10px 10px 10px;
+    box-shadow: 0px 3px 10px -2px #000;
+    grid-area: 2 / 2 / 2 / 2;
+    background: var(--aboutbg);
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+
+/* TOP LYRIC */
+
+.topbar {
+    grid-area: 1 / 1 / 1 / 4;
+    border-bottom:1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+    font-style: italic;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* SMALL PICTURE STYLING */
+
+.leftpic {
+    grid-area: 8 / 1 / 11 / 1;
+    background: var(--accent);
+    border-radius: 0 0 0 7px;
+}
+
+/* LONG PICTURE STYLING */
+
+.rightpic {
+    grid-area: 1 / 4 / 11 / 4;
+    background: var(--accent);
+    border-radius: 0 7px 7px 0;
+}
+
+/* MAIN ABOUT BOX */
+
+.main {
+    grid-area: 2 / 2 / 8 / 4;
+    padding: 0px 15px;
+    overflow: auto;
+    border-top: 15px solid var(--aboutbg);
+    border-bottom: 15px solid var(--aboutbg);
+}
+
+.main p {
+    margin-top: 0;
+    font-size: 10pt;
+    line-height: 20px;
+}
+
+.main i {
+    color: var(--accent);
+}
+
+.main b {
+    color: var(--accent);
+}
+
+.main a {
+    color: var(--text);
+    text-decoration-color: var(--accent);
+    transition: 200ms;
+}
+
+.main a:hover {
+    color: var(--accent);
+}
+
+/* NAME AND INFO BOX */
+
+.base {
+    grid-area: 9 / 2 / 11 / 4;
+    border-bottom:5px solid var(--accent);
+    text-align: center;
+}
+
+.name {
+    width: max-content;
+    border-bottom: 1px solid var(--accent);
+    margin: 10px auto;
+    padding: none;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 28pt;
+}
+
+.base p {
+    padding: none;
+    margin: none;
+    line-height: 3px;
+    font-family:'Khula', sans-serif;
+    font-weight: 300;
+}
+
+/* LINKS */
+
+.links {
+    grid-area: 8 / 2 / 8 / 4;
+    border-bottom:1px solid var(--accent);
+    border-top:1px solid var(--accent);
+}
+
+.links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.links li {
+    display: inline;
+    line-height: 50px;
+}
+
+.links a {
+    padding: 0 8px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 700;
+    font-style: italic;
+    transition: 400ms;
+    border-radius: 3px;
+}
+
+.links li a:hover {
+    background: var(--accent);
+    color: var(--accenttext);
+}
+
+/* TAGS / NAVIGATION */
+
+.stats {
+    grid-area: 2 / 1 / 8 / 1;
+    background: var(--accent);
+    display: flex;
+}
+
+.stats ul {
+  list-style: none;
+  padding: none;
+  margin-left: -20px;
+  color: var(--accenttext);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.stats li {
+  padding-left: none;
+  margin: none;
+  text-indent: 0px;
+  line-height:10px;
+}
+
+.stats a {
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 8px;
+    border-radius: 3px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    transition: 400ms;
+}
+
+n {
+    position: relative;
+    right: 5px;
+    top: 7px;
+    font-family: 'Londrina Outline', display;
+    font-style: normal;
+    font-size: 30pt;
+}
+
+.stats a:hover {
+    background: var(--aboutbg);
+    color: var(--text);
+}
+
+
+/* LONG PHOTO */
+
+.pic1 {
+    height: 500px;
+    width: 200px;
+    
+    
+     /* 🌻 replace this url with your image for the right picture */
+    background-image: url("URLHERE");
+    
+    
+    /* if it looks weird like it's repeating, switch the two values under 'background-size' to '100% auto' and it should correct it */
+    
+    /* if it isn't centered properly, mess around with the FIRST percentage under 'background-position' to move it left or right */
+    
+    /* if it looks too dark or light, or the contrast is off, you can edit that under 'filter'. just change the brightness and contrast values. 100% is normal. lower percentages lower the brightness/contrast, higher percentages increase it. */
+    
+    background-position: 50% 50%;
+    background-size: auto 100%; 
+    border-radius: 0 7px 7px 0;
+    filter: grayscale(100%) brightness(100%) contrast(100%);
+    mix-blend-mode: multiply;
+}
+
+/* SMALL PHOTO */
+
+.pic2 {
+    height: 150px;
+    width: 200px;
+    
+    
+    /* 🌻 replace this url with your image for the bottom left photo*/
+    background-image: url("URLHERE");
+    
+    /* if it looks weird like it's repeating, switch the two values under 'background-size' to '100% auto' and it should correct it */
+    
+    /* if it isn't centered properly, mess around with the FIRST percentage under 'background-position' to move it left or right */
+    
+    /* if it looks too dark or light, or the contrast is off, you can edit that under 'filter'. just change the brightness and contrast values. 100% is normal. lower percentages lower the brightness/contrast, higher percentages increase it. */
+    
+    
+    background-position: 50% 50%;
+    background-size: auto 100%;
+    border-radius: 0 0 0 7px;
+    filter: grayscale(100%) brightness(100%) contrast(100%);
+    mix-blend-mode: multiply;
+}
+    
+</style>
+  
+      
+</head>
+
+<body>
+<div class="grid-container1">
+
+    <div class="grid-container2">
+    <div class="rightpic"><div class="pic1"></div></div>
+    <div class="leftpic"><div class="pic2"></div></div>
+    
+    
+    
+<!-- QUOTE / LYRIC -->
+        <div class="topbar">
+            lyrics here
+        </div>
+        
+        
+<!-- TAGS -->
+        
+        <div class="stats">
+            <ul>
+            
+            <!-- TAGS / NAVIGATION goes here. they space themselves but i'd recommend sticking with 5 - 7 tags -->
+            
+            <li><a href="/tagged/TAG HERE"><n>#</n>tag name</a></li>
+            <li><a href="/tagged/TAG HERE"><n>#</n>tag name</a></li>
+            <li><a href="/tagged/TAG HERE"><n>#</n>tag name</a></li>
+            <li><a href="/tagged/TAG HERE"><n>#</n>tag name</a></li>
+            <li><a href="/tagged/TAG HERE"><n>#</n>tag name</a></li>
+            <li><a href="/tagged/TAG HERE"><n>#</n>tag name</a></li>
+            
+            
+            </ul>
+        </div>
+        
+        
+<!-- ABOUT -->
+
+<div class="main">
+        
+        <!-- about text goes in between this note -->
+            <p>main about text goes here. supports html markups like <b>bold text</b> and <i>italics</i>. it also has nice paragraph spacing when you wrap paragraphs in their tags</p>
+            
+            <p>you can also <a href="https://ebrothemes.tumblr.com">link things</a> in the text. </p>
+
+            <h3>headings are supported</h3>
+            <p>but i wouldn't go higher than h3 otherwise it gets pretty large.</p>
+            <h4>here's  a smaller heading</h4>
+            <h5>and an even smaller one</h5>
+            <p>also this entire text section scrolls when it gets long enough.</p>
+            
+        <!-- and this note -->    
+            
+</div>
+        
+
+<!-- LINKS -->
+
+        <div class="links"><ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/ask">ask</a></li>
+            <li><a href="/archive">archive</a></li>
+            <li><a href="/URLHERE">custom link</a></li>
+        </ul></div>
+        
+        
+<!-- NAME AND INFO -->
+
+        <div class="base">
+            <div class="name">name here</div>
+            <p>age -- pronouns -- location</p>
+        </div>
+        
+
+
+</div>
+<div class="credit"><a href="https://ebrothemes.tumblr.com" title="ebrothemes" style="color:var(--accenttext);">E</a></div>
+</div>
+
+</body>
+</html>
