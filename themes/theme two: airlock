@@ -259,8 +259,9 @@ img:not(.lightbox-image) {
     border-radius: {select:Corners};
 }
 
-h2 {
-    margin: 0;
+h2, h3, h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 p {
