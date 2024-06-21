@@ -679,6 +679,16 @@ blockquote {
     border-radius: 0px;
 }
 
+[photoset-layout] {
+    overflow:hidden;
+    border-radius: {select:Corners}!important;
+    grid-gap: {select:Photoset Gutters};
+}
+
+[photoset-layout] img {
+  border-radius: 0px; /* each image's border radius */
+}
+
 /* QUOTE */
 
 .quote-content {
